@@ -4,5 +4,6 @@ version: 1.0
 api-version: 1.21
 author: VazarinX
 description: Prevents players from curing zombie villagers
+website: https://github.com/VazarinX/NoCure-Zombie-Villagers
 softdepend:
   - DiscordSRV
