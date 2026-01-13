@@ -6,10 +6,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.ZombieVillager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityTransformEvent;
 import org.bukkit.event.entity.PotionSplashEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
@@ -95,6 +97,17 @@ public class NoCure extends JavaPlugin implements Listener {
                         getLogger().warning("[NoCure] Could not find DiscordSRV staff-chat channel.");
                     }
                 }
+            }
+        }
+    }
+
+    //Stop the transformation if needed
+    @EventHandler
+    public void onZombieVillagerCure(EntityTransformEvent event) {
+        if (event.getTransformReason() == EntityTransformEvent.TransformReason.CURED) {
+            if (event.getEntityType() == EntityType.ZOMBIE_VILLAGER && event.getTransformedEntity().getType() == EntityType.VILLAGER) {
+                event.setCancelled(true);
+
             }
         }
     }
