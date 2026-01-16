@@ -1,6 +1,6 @@
 name: NoCure
 main: prevent.curing.NoCure
-version: 1.0
+version: 1.1
 api-version: 1.21
 author: VazarinX
 description: Prevents players from curing zombie villagers

@@ -6,7 +6,7 @@
 
     <groupId>no.cure</groupId>
     <artifactId>NoCure</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>NoCure</name>
     <description>Prevents curing of zombie villagers</description>
 
